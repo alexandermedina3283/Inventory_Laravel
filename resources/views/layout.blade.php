@@ -91,6 +91,12 @@
              Brands
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/categories">
+              <span data-feather="shopping-cart"></span>
+             Categories
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

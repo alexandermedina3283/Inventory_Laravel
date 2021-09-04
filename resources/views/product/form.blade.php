@@ -66,6 +66,37 @@
         </p>
         @enderror
     </div>
+
+    <div class="row mb-3">
+        <label for="categories" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+          <select name="categori" class="form-select">
+              @foreach($categories as $categoria)
+              <option value = "{{$categoria->id}}"{{$product->categori_id == $categoria->id ? "selected":""}}>{{$categoria->name}}</option>
+              @endforeach
+            </select>
+        </div>
+        @error('categori')
+        <p class="text-danger">
+            {{$message}}
+        </p>
+        @enderror
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="row mb-3">
         <div class="col-sm-10"></div>
         <div class="col-sm-2">

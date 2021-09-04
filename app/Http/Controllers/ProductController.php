@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\Categori;
 
 class ProductController extends Controller
 {
@@ -20,10 +21,11 @@ class ProductController extends Controller
     function form($id=null){
         $product = new Product();
         $brands = Brand::all();
+        $categori = Categori::all();
         if($id!=null){
             $product = Product::findOrFail($id);
         }
-        return view('product/form',['product'=> $product, 'brands'=>$brands]);
+        return view('product/form',['product'=> $product, 'brands'=>$brands, 'categories' =>$categori]);
     }
 
     function save(Request $request){
@@ -34,6 +36,7 @@ class ProductController extends Controller
             "price"=>'required|numeric',
             "quantity"=>'required|numeric',
             "brand"=>'required|max:50',
+            "categori"=>'required|max:50',
         ]);
 
         $product = new Product();
@@ -45,6 +48,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->brand_id = $request->brand;
+        $product->categori_id = $request->categori;
 
         $product->save();
 

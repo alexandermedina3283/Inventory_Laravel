@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/usuario/{nombre_usuario?}', [PersonaController::class ,'mostrar'])-
 Route::get('/products', [ProductController::class, 'show']);
 
 Route::get('/brands', [BrandController::class, 'show']);
+
+Route::get('/categories', [CategoriController::class, 'show']);
 
 Route::get('/product/form/{id?}',[ProductController::class, 'form'])->name('product.form');
 
