@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 
+<p class="fs-5 fw-bold text-start">Listado marcas</p>
 <div class="row">
     <div class="col-sm-10"></div>
     <div class="col-sm-2">

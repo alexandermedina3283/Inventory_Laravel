@@ -54,7 +54,11 @@
     <div class="row mb-3">
         <label for="brand" class="col-sm-2 col-form-label">Brand</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="brand" value="{{@old('brand') ? @old('brand'):$product->brand}}">
+          <select name="brand" class="form-select">
+              @foreach($brands as $brand)
+              <option value = "{{$brand->id}}"{{$product->brand_id == $brand->id ? "selected":""}}>{{$brand->name}}</option>
+              @endforeach
+            </select>
         </div>
         @error('brand')
         <p class="text-danger">

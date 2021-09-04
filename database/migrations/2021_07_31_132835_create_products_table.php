@@ -19,8 +19,10 @@ class CreateProductsTable extends Migration
             $table->double('cost',10,2);
             $table->double('price',10,2);
             $table->integer('quantity');
-            $table->string('brand',50);            
+            $table->foreignId('brand_id');            
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on ('brands');
         });
     }
 
